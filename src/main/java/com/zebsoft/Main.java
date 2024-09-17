@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.zebsoft.command.AddExpenseCommand;
 import com.zebsoft.command.CommandRegistry;
+import com.zebsoft.command.DeleteExpenseCommand;
 import com.zebsoft.command.ListExpenseCommand;
 import com.zebsoft.command.Summary;
 import com.zebsoft.db.DBManager;
@@ -21,6 +22,7 @@ public class Main {
     commandRegistry.registerCommand("add", new AddExpenseCommand());
     commandRegistry.registerCommand("list", new ListExpenseCommand());
     commandRegistry.registerCommand("summary", new Summary());
+    commandRegistry.registerCommand("delete", new DeleteExpenseCommand());
 
     String command = args[0];
     Map<String, String> options = ArgParser.parse(args);

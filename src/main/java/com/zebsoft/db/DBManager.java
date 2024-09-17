@@ -57,10 +57,11 @@ public class DBManager {
     }
 
     // Delete an object by a custom matcher (e.g., id match)
-    public void delete(Matcher matcher) throws IOException {
+    public boolean delete(Matcher matcher) throws IOException {
         List<Expense> objects = readAll();
-        objects.removeIf(matcher::matches);
+        var removed = objects.removeIf(matcher::matches);
         objectMapper.writeValue(dbFile, objects);
+        return removed;        
     }
 
     // Functional interface for matching objects
