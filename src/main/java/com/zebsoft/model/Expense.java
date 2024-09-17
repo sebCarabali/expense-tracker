@@ -1,19 +1,19 @@
 package com.zebsoft.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Expense implements Serializable {
 
-    private Long id;
+    private int id;
     private String description;
-    private LocalDate date;
+    private Date date;
     private Double amount;
 
     public Expense() {
     }
 
-    public Expense(Long id, String description, LocalDate date, Double amount) {
+    public Expense(int id, String description, Date date, Double amount) {
         this.id = id;
         this.description = description;
         this.date = date;
@@ -27,11 +27,11 @@ public class Expense implements Serializable {
         this.amount = builder.amount;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -43,11 +43,11 @@ public class Expense implements Serializable {
         this.description = description;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -60,12 +60,12 @@ public class Expense implements Serializable {
     }
 
     public static class Builder {
-        private Long id;
+        private int id;
         private String description;
-        private LocalDate date;
+        private Date date;
         private Double amount;
 
-        public Builder id(Long id) {
+        public Builder id(int id) {
             this.id = id;
             return this;
         }
@@ -75,7 +75,7 @@ public class Expense implements Serializable {
             return this;
         }
 
-        public Builder date(LocalDate date) {
+        public Builder date(Date date) {
             this.date = date;
             return this;
         }
