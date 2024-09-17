@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.zebsoft.command.AddExpenseCommand;
 import com.zebsoft.command.CommandRegistry;
+import com.zebsoft.command.ListExpenseCommand;
 import com.zebsoft.db.DBManager;
 import com.zebsoft.parser.ArgParser;
 
@@ -17,6 +18,7 @@ public class Main {
     DBManager dbManager = new DBManager("expense-tracker.json");
     CommandRegistry commandRegistry = new CommandRegistry();
     commandRegistry.registerCommand("add", new AddExpenseCommand());
+    commandRegistry.registerCommand("list", new ListExpenseCommand());
 
     String command = args[0];
     Map<String, String> options = ArgParser.parse(args);
